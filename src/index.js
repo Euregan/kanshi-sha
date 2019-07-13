@@ -11,24 +11,8 @@ const http = require('./sideEffects/http')({log, cache})
 
 const api = require('./api')
 
+const {configuration, providers} = require('./sideEffects/providers')
 
-Array.prototype.flatMap = function(callback) {
-    return this.reduce((acc, el) => acc.concat(callback(el)), [])
-}
-
-const configuration = {
-    providers: require('./configuration/providers'),
-    packages: require('./configuration/packages'),
-    standalones: require('./configuration/standalones')
-}
-
-const rawProviders = require('fs').readdirSync(require('path').join(__dirname, 'providers'))
-
-let providers = {}
-for (let i = 0; i < rawProviders.length; i++) {
-    const provider = rawProviders[i]
-    providers[provider.split('.')[0]] = require(`./providers/${provider}`)
-}
 
 api({
     config: config,
