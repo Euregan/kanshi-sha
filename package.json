@@ -18,5 +18,8 @@
     "postinstall": "node postinstall.js"
   },
   "author": "Valentin Manceaux-Panot",
-  "license": "ISC"
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
 }
