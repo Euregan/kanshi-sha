@@ -1,0 +1,21 @@
+{
+  "name": "kanshi-sha",
+  "version": "0.1.0",
+  "description": "",
+  "dependencies": {
+    "@kanshi/kanshi": "^0.2.2",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "mustache-express": "^1.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "nodemon --watch src src/index.js",
+    "postinstall": "cp node_modules/@kanshi/kanshi/dist/kanshi.js public/js/app.js"
+  },
+  "author": "Valentin Manceaux-Panot",
+  "license": "ISC"
+}
