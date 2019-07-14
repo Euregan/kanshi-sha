@@ -37,7 +37,7 @@ module.exports = (sideEffects, providers) => {
         id: application.id,
         name: application.name,
         publicationName: providers.get(application.package).publicationName(),
-        versions: providers.get(application.package).versions(),
+        versions: providers.get(application.versions).versions(),
         builds: providers.get(application.builds).builds(),
         deployments: providers.get(application.deployments).deployments()
     })
