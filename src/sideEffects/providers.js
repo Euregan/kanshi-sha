@@ -14,6 +14,7 @@ const parseConfiguration = config => config.reduce(([providersAcc, packagesAcc],
 
             if (provider in configuration.providers) {
                 providersAcc.push(configuration.providers[provider].provider)
+                config[key].provider = configuration.providers[provider].provider
                 config[key].configuration = {...configuration.providers[provider].configuration, ...config[key].configuration}
             } else {
                 providersAcc.push(provider)
