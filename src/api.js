@@ -38,6 +38,5 @@ module.exports = (sideEffects, configuration, providers) => express => {
         })
     )
 
-    const port = 3000
-    express.listen(port, () => log.info(`App listening on ${port}`))
+    express.listen(config.port, () => log.info(`App listening on ${config.port}`))
 }

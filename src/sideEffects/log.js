@@ -9,9 +9,9 @@ module.exports = ({config}) => {
         trace: 600,
         all: Infinity
     }
-    const level = levels[config.app.logLevel] || levels.info
+    const level = levels[config.logLevel] || levels.info
     const format = data => {
-      if (config.app.environment === 'production') {
+      if (config.environment === 'production') {
         const objectData = typeof data !== 'object' || Array.isArray(data)
           ? { data: data }
           : data

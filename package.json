@@ -14,7 +14,7 @@
   },
   "scripts": {
     "test": "exit 0",
-    "watch": "nodemon --watch src src/index.js"
+    "watch": "nodemon --watch src src/dev.js"
   },
   "author": "Valentin Manceaux-Panot",
   "license": "ISC",
