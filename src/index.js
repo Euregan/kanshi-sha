@@ -4,6 +4,7 @@ module.exports = setup => {
     const express = require('express')
     const bodyparser = require('body-parser')
     const mustache = require('mustache-express')
+    const path = require('path')
 
     const config = require('./sideEffects/config')
     const log = require('./sideEffects/log')({config})
@@ -24,7 +25,7 @@ module.exports = setup => {
         .set('view engine', 'mst')
         .set('views', __dirname + '/templates')
         .use(bodyparser.json())
-        .use(express.static('public'))
+        .use(express.static(path.resolve(setup.resources)))
         .use((request, response, next) =>
             log.info(`${(new Date()).toLocaleTimeString()} ${request.protocol}://${request.get('host')}${request.path}`) && next()
         )
