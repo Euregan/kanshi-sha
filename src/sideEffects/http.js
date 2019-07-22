@@ -18,6 +18,9 @@ module.exports = ({log, cache}) => {
             if (options && options.auth) {
                 parameters.headers.Authorization = options.auth
             }
+            if (options && options.headers) {
+                parameters.headers = {...parameters.headers, ...options.headers}
+            }
 
             const request = https.request(parameters, response => {
                 log.info(`[${method}:${response.statusCode}] https://${parameters.hostname}${parameters.path}`)
